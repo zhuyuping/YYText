@@ -15,7 +15,6 @@
 FOUNDATION_EXPORT double YYTextVersionNumber;
 FOUNDATION_EXPORT const unsigned char YYTextVersionString[];
 #import <YYText/YYLabel.h>
-#import <YYText/YYTextView.h>
 #import <YYText/YYTextAttribute.h>
 #import <YYText/YYTextArchiver.h>
 #import <YYText/YYTextParser.h>
