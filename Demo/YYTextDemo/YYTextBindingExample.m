@@ -47,8 +47,8 @@
 
 @end
 
-@interface YYTextBindingExample () <YYTextViewDelegate>
-@property (nonatomic, strong) YYTextView *textView;
+@interface YYTextBindingExample ()
+//@property (nonatomic, strong) YYTextView *textView;
 @property (nonatomic, assign) BOOL isInEdit;
 @end
 
@@ -67,47 +67,47 @@
     text.yy_lineSpacing = 5;
     text.yy_color = [UIColor blackColor];
     
-    YYTextView *textView = [YYTextView new];
-    textView.attributedText = text;
-    textView.textParser = [YYTextExampleEmailBindingParser new];
-    textView.size = self.view.size;
-    textView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    textView.delegate = self;
-    if (kiOS7Later) {
-        textView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
-    }
-    textView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
-    textView.scrollIndicatorInsets = textView.contentInset;
-    [self.view addSubview:textView];
-    self.textView = textView;
-    [self.textView becomeFirstResponder];
+//    YYTextView *textView = [YYTextView new];
+//    textView.attributedText = text;
+//    textView.textParser = [YYTextExampleEmailBindingParser new];
+//    textView.size = self.view.size;
+//    textView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10);
+//    textView.delegate = self;
+//    if (kiOS7Later) {
+//        textView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+//    }
+//    textView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+//    textView.scrollIndicatorInsets = textView.contentInset;
+//    [self.view addSubview:textView];
+//    self.textView = textView;
+//    [self.textView becomeFirstResponder];
     
 }
 
-- (void)edit:(UIBarButtonItem *)item {
-    if (_textView.isFirstResponder) {
-        [_textView resignFirstResponder];
-    } else {
-        [_textView becomeFirstResponder];
-    }
-}
-
-- (void)textViewDidChange:(YYTextView *)textView {
-    if (textView.text.length == 0) {
-        textView.textColor = [UIColor blackColor];
-    }
-}
-
-- (void)textViewDidBeginEditing:(YYTextView *)textView {
-    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                target:self
-                                                                                action:@selector(edit:)];
-    self.navigationItem.rightBarButtonItem = buttonItem;
-}
-
-- (void)textViewDidEndEditing:(YYTextView *)textView {
-    self.navigationItem.rightBarButtonItem = nil;
-}
+//- (void)edit:(UIBarButtonItem *)item {
+//    if (_textView.isFirstResponder) {
+//        [_textView resignFirstResponder];
+//    } else {
+//        [_textView becomeFirstResponder];
+//    }
+//}
+//
+//- (void)textViewDidChange:(YYTextView *)textView {
+//    if (textView.text.length == 0) {
+//        textView.textColor = [UIColor blackColor];
+//    }
+//}
+//
+//- (void)textViewDidBeginEditing:(YYTextView *)textView {
+//    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+//                                                                                target:self
+//                                                                                action:@selector(edit:)];
+//    self.navigationItem.rightBarButtonItem = buttonItem;
+//}
+//
+//- (void)textViewDidEndEditing:(YYTextView *)textView {
+//    self.navigationItem.rightBarButtonItem = nil;
+//}
 
 
 @end
